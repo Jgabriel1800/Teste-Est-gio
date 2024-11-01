@@ -53,10 +53,8 @@ def maior_faturamento(lista_faturamento):
     return maior
 
 def media_faturamento(lista_faturamento):
-    soma = 0
-    for i in lista_faturamento:
-        soma += i["valor"]
-    return soma / len(lista_faturamento)
+    valores = [i["valor"] for i in lista_faturamento if i["valor"] > 0]
+    return sum(valores) / len(valores)
 
 def dias_acima_media(lista_faturamento):
     media = media_faturamento(lista_faturamento)
